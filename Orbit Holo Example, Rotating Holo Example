@@ -1,0 +1,21 @@
+@name Orbit Holo Example
+@persist Ang
+interval(100)
+
+BaseHoloID=666
+SpinningHoloID=667
+Value=5
+
+if(first()){
+    holoCreate(BaseHoloID)
+    holoCreate(SpinningHoloID)
+    
+    holoParent(SpinningHoloID, holoEntity(BaseHoloID))
+    
+    holoPos(SpinningHoloID, holoEntity(BaseHoloID):pos()+vec(150,0,0))
+    
+    # holoParent(BaseHoloID, entity()) # remove the # at the start of the line if you want the rotating base holo to move with the e2
+}
+Ang+=Value
+holoAng(BaseHoloID, ang(0,Ang,0))
+
