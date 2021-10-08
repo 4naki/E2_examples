@@ -1,21 +1,17 @@
 @name Orbit Holo Example
-@persist Ang
+@persist Ang 
 interval(100)
 
-BaseHoloID=666
-SpinningHoloID=667
-Value=5
-
 if(first()){
-    holoCreate(BaseHoloID)
-    holoCreate(SpinningHoloID)
+    holoCreate(1)
+    holoPos(1,entity():toWorld(vec(0,0,15)))
+    holoAng(1,entity():toWorld(ang(0,0,0)))
+    holoParent(1,entity())
     
-    holoParent(SpinningHoloID, holoEntity(BaseHoloID))
-    
-    holoPos(SpinningHoloID, holoEntity(BaseHoloID):pos()+vec(150,0,0))
-    
-    # holoParent(BaseHoloID, entity()) # remove the # at the start of the line if you want the rotating base holo to move with the e2
+    holoCreate(2)
+    holoPos(2, holoEntity(1):pos()+vec(150,0,0))
+    holoAng(2, holoEntity(1):toWorld(ang(0,0,0)))
+    holoParent(2, holoEntity(1))
 }
-Ang+=Value
-holoAng(BaseHoloID, ang(0,Ang,0))
-
+Ang+=5
+holoAng(1, ang(0,Ang,0))
