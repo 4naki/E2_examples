@@ -1,7 +1,6 @@
 @name Souls Games Area Name Display
 @inputs EGP:wirelink [Area1Ent1 Area1Ent2]:entity
 @persist [Area1Pos1 Area1Pos2]:vector [Array2 Array]:array Ent:entity AreaNames:array A Switch
-@outputs [Area1Pos1 Area1Pos2]:vector [Array2 Array]:array Ent:entity AreaNames:array A Switch
 
 interval(50)
 
